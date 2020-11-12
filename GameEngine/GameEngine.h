@@ -39,6 +39,8 @@ public:
 		const int yPos, const int width, const int height,
 		const int flags);
 
+	void SetInitialState(ScreenState* initalState) { GetFSM()->ChangeState(initalState); }
+
 	void QuitGame() { isAppRunning = false; }
 
 	//Is the Application running

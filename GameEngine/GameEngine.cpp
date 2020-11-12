@@ -61,10 +61,7 @@ bool GameEngine::Init(const char* title, const int xPos, const int yPos, const i
 	m_iKeystates = SDL_GetKeyboardState(nullptr);
 	isAppRunning = true;
 
-	//m_pFSM = new StateMachine();
-	//m_pFSM->ChangeState(new MainMenuState());
-
-
+	m_pFSM = new StateMachine();
 
 	return true;
 }
