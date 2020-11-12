@@ -1,6 +1,6 @@
 #include "MainMenuState.h"
 #include "GameEngine.h"
-//#include "GameLevel1.h"
+#include "GameLevel1.h"
 
 
 void MainMenuState::Enter()
@@ -22,7 +22,7 @@ void MainMenuState::Update()
 	if (m_vButtons[btn::play]->Clicked())
 	{
 		//we need to switch to gamestate ... 
-		//GameEngine::Instance()->GetFSM()->ChangeState(new GameLevel1());
+		GameEngine::Instance()->GetFSM()->ChangeState(new GameLevel1());
 	}
 
 	else if (m_vButtons[btn::exit]->Clicked())
