@@ -33,6 +33,9 @@ public:
 	void UnloadMusic();
 	void UnloadSound();
 
+	void UnloadSingleMusic(int id);
+	void UnloadSingleSound(int id);
+
 	//Toggle music:: so that you can pause and resume the current music track
 	void ToggleMusic();
 };

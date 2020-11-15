@@ -108,6 +108,22 @@ void AudioManager::UnloadSound()
 	}
 }
 
+void AudioManager::UnloadSingleMusic(int id) 
+{
+	Mix_FreeMusic(m_vMusicTracks[id]);
+	m_vMusicTracks[id] = nullptr;
+	m_vMusicTracks.erase(m_vMusicTracks.begin() + id);
+	m_vMusicTracks.shrink_to_fit();
+}
+
+void AudioManager::UnloadSingleSound(int id)
+{
+	Mix_FreeChunk(m_vSounds[id]);
+	m_vSounds[id] = nullptr;
+	m_vSounds.erase(m_vSounds.begin() + id);
+	m_vSounds.shrink_to_fit();
+}
+
 AudioManager::~AudioManager()
 {
 	UnloadMusic();
