@@ -12,6 +12,12 @@ int main(int argc, char* argv[])
 
 	GameEngine::Instance()->SetInitialState(new MainMenuState());
 
+	//Globably Loaded Music -> Removed in GameState on Exit
+
+	GameEngine::Instance()->GetAM()->SetMusicVolume(5);
+	GameEngine::Instance()->GetAM()->LoadMusic("Aud/game.mp3");
+	GameEngine::Instance()->GetAM()->LoadMusic("Aud/lose.mp3");
+
 //	Game::Instance()->InitializeGame();
 
 

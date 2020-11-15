@@ -82,6 +82,13 @@ void AudioManager::UnloadMusic()
 	//how to unload a single music track from memory:
 	//Mix_FreeMusic(  )
 
+	for (int i = 0; i < m_vMusicTracks.size(); i++) {
+		Mix_FreeMusic(m_vMusicTracks[i]);
+		m_vMusicTracks[i] = nullptr;
+		m_vMusicTracks.erase(m_vMusicTracks.begin() + i);
+		m_vMusicTracks.shrink_to_fit();
+	}
+
 	//how do you unload the entire vector?
 	//iterate through the vector,
 	//unload each index, and set its index to nullptr
@@ -93,7 +100,12 @@ void AudioManager::UnloadMusic()
 void AudioManager::UnloadSound()
 {
 	//how to unload a single audio chunk from memory:
-	//Mix_FreeChunk(    )
+	for (int i = 0; i < m_vSounds.size(); i++) {
+		Mix_FreeChunk(m_vSounds[i]);
+		m_vSounds[i] = nullptr;
+		m_vSounds.erase(m_vSounds.begin() + i);
+		m_vSounds.shrink_to_fit();
+	}
 }
 
 AudioManager::~AudioManager()

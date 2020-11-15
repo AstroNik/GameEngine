@@ -36,7 +36,7 @@ void Button::Update()
 		{
 			m_bReleased = true;
 			m_iFrame = MOUSE_OVER;
-			//GameEngine::Instance()->GetAM()->PlaySound(0);
+			GameEngine::Instance()->GetAM()->PlaySound(0);
 		}
 	}
 	else

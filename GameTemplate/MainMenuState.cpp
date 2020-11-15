@@ -2,7 +2,6 @@
 #include "GameEngine.h"
 #include "GameLevel1.h"
 
-
 void MainMenuState::Enter()
 {
 	cout << "Entering MainMenu...\n";
@@ -10,6 +9,8 @@ void MainMenuState::Enter()
 
 	m_vButtons.push_back(new Button("Img/play.png", { 0,0,400,100 }, { 312,200,400,100 }));
 	m_vButtons.push_back(new Button("Img/exit.png", { 0,0,400,100 }, { 312,400,400,100 }));
+
+	GameEngine::Instance()->GetAM()->LoadSound("Aud/button.wav");
 }
 
 void MainMenuState::Update()
@@ -57,4 +58,5 @@ void MainMenuState::Exit()
 	m_vButtons.clear();
 	m_vButtons.shrink_to_fit();
 
+	GameEngine::Instance()->GetAM()->UnloadSound();
 }

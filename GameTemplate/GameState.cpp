@@ -23,6 +23,7 @@ void GameState::Enter()
 
 	enemy = new Enemy(mainSpriteTex, bgDestRect.w * 0.6, bgDestRect.h - 100);
 
+	GameEngine::Instance()->GetAM()->PlayMusic(0);
 }
 
 
@@ -69,8 +70,7 @@ void GameState::Render()
 
 void GameState::Exit()
 {
-	//to-do:: de-allocate memory, texture, surface etc, sound 
-
+	GameEngine::Instance()->GetAM()->UnloadMusic();
 }
 
 void GameState::CheckCollision()

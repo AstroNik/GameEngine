@@ -3,11 +3,11 @@
 #include "Button.h"
 #include <vector>
 #include <iostream>
+
 using namespace std;
 
 class MainMenuState : public ScreenState
 {
-
 private:
 	vector<Button*> m_vButtons;
 	enum btn { play, exit };

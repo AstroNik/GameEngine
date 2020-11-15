@@ -68,5 +68,4 @@ public:
 
 	StateMachine* GetFSM() { return m_pFSM; }
 	AudioManager* GetAM() { return m_pAM; }
-
 };

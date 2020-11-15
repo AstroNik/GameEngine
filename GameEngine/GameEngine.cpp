@@ -51,10 +51,10 @@ bool GameEngine::Init(const char* title, const int xPos, const int yPos, const i
 		return false;
 	}
 
-	//m_pAM = new AudioManager();
-	////if you are not able to initialize, return false
-	//if (!m_pAM->Init())
-	//	return false;
+	m_pAM = new AudioManager();
+	//if you are not able to initialize, return false
+	if (!m_pAM->Init())
+		return false;
 	////set to lower volume so we can hear sfx as well
 	//m_pAM->SetMusicVolume(10);
 	//m_pAM->LoadSound("Aud/button.wav");
